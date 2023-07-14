@@ -14,6 +14,7 @@ RegisterNetEvent('randol_medical:server:playerResponse', function(data)
     local src = source
     local Player = QBCore.Functions.GetPlayer(data.id)
     if Player.PlayerData.job.name == 'ambulance' or Player.PlayerData.job.name == 'police' then
-        QBCore.Functions.Notify(Player.PlayerData.source, "The Patient has "..data.response, 5000)
+        --QBCore.Functions.Notify(Player.PlayerData.source, "The Patient has "..data.response, 5000)
+        TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, 'The Patient has '..data.response, 'error')
     end
 end)
