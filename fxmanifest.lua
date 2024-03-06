@@ -14,6 +14,7 @@ client_scripts {
 }
 
 server_scripts {
+    '@oxmysql/lib/MySQL.lua', -- need this for esx apparently to get death status.
     'bridge/server/**.lua',
     'sv_pulse.lua',
 }

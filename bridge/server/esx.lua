@@ -15,7 +15,8 @@ function GetCharacterName(xPlayer)
 end
 
 function isPlyDead(xPlayer)
-    return PlayerData.metadata.inlaststand or PlayerData.metadata.isdead
+    local isDead = MySQL.query.await('SELECT is_dead FROM users WHERE identifier = ?', {xPlayer.identifier})
+    return isDead
 end
 
 function isPoliceOrAmbulance(xPlayer)
