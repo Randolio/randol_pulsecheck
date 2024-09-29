@@ -12,5 +12,5 @@ RegisterNetEvent('randol_medical:server:playerResponse', function(data)
     local Player = GetPlayer(data.id)
 
     if not isPoliceOrAmbulance(Player) then return end
-    DoNotification(data.id, ('The Patient has %s'):format(data.response), 5000)
+    DoNotification(data.id, ('The Patient has %s'):format(data.response))
 end)
